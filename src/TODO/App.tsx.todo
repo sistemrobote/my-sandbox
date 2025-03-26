@@ -1,0 +1,52 @@
+import './App.css'
+import { TodoList } from './TodoList';
+import  { useReducer, useMemo, useCallback, useState, useRef, useEffect } from "react";
+
+import {todoReducer} from './Reducer'
+
+const initialState = [
+  { id: 1, text: "Learn React", completed: false },
+  { id: 2, text: "Optimize Performance", completed: false },
+];
+
+
+
+
+
+const TodoApp = () => {
+  const [todos, dispatch] = useReducer(todoReducer, initialState);
+  const [filter, setFilter] = useState("all");
+
+  const filteredTodos = useMemo(() => {
+    console.log("Filtering Todos...");
+    return todos.filter(todo => {
+      if (filter === "completed") return todo.completed;
+      if (filter === "pending") return !todo.completed;
+      return true;
+    });
+  }, [todos, filter]);
+
+  const toggleTodo = useCallback((id) => {
+    dispatch({ type: "TOGGLE_TODO", id });
+  }, [dispatch]);
+
+  let renderCount = 0;
+useEffect(() => {
+  renderCount= renderCount + 1;
+  console.log(`Component rendered ${renderCount} times`);
+});
+
+  return (
+    <div>
+      <h1>To-Do List</h1>
+      <select onChange={(e) => setFilter(e.target.value)} value={filter}>
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+      </select>
+      <TodoList todos={filteredTodos} onToggle={toggleTodo} />
+    </div>
+  );
+};
+
+export default TodoApp;
