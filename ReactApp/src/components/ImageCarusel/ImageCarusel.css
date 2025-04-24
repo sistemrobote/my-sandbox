@@ -1,0 +1,29 @@
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    width: fit-content;
+}
+
+.imageCont {
+    max-width: 600px;
+}
+
+.buttons {
+    background-color: bisque;
+    border-radius: 50%;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.buttons-left {
+    left: 1rem;
+}
+
+.buttons-right {
+    right: 1rem;
+}

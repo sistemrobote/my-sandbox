@@ -29,23 +29,25 @@ function isPalindrome(s) {
 //   }
 // }
 // https://leetcode.com/problems/move-zeroes/submissions/1554355667/
-function moveZeroes(nums) {
-  let left = 0;
-  let right = 1;
+var moveZeroes = function (nums) {//[0,1,0,3,12]  //[1,3,0,0,12] => [1,3,12,0,0]
+  let l = 0;
+  let r = 1;
 
-  while (right < nums.length) {
-    if (nums[left] === 0 && nums[right] === 0) {
-      right++;
-    } else if (nums[left] === 0) {
-      [nums[left], nums[right]] = [nums[right], nums[left]];
-      left++;
-      right++;
+  while (r < nums.length) {
+    if (nums[l] === 0 && nums[r] === 0) {
+      r++;
+    } else if (nums[l] === 0 && nums[r] !== 0) {
+      [nums[l], nums[r]] = [nums[r], nums[l]];
+      r++;
+      l++;
     } else {
-      left++;
-      right++;
+      r++;
+      l++;
     }
   }
+  return nums;
 }
+
 // https://leetcode.com/problems/container-with-most-water/
 var maxArea = function (height) {
   let l = 0;
@@ -259,5 +261,5 @@ var groupAnagrams = function (strs) {
 
 console.log(
   "RESULT",
-  groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"])
+  moveZeroes([0, 1, 0, 3, 12])
 );

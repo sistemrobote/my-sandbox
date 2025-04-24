@@ -21,6 +21,9 @@ var firstUniqChar = function (s) {
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-console.log("RESULT", firstUniqChar("loveleetcode"));
-console.log("hello" || "world")
-console.log("foo" && "bar")
+// console.log("RESULT", duplicate([1, 2, 3, 4, 5]));
+const window = {};
+
+(window.foo || (window.foo = "bar"))
+
+console.log(window.foo)

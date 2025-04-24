@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.content {
+    width: 50%;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.questionItem {
+    margin-bottom: 20px;
+}
