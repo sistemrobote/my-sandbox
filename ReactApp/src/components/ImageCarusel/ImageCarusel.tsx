@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './ImageCarusel.css';
 
+{/* <ImageCarusel url={'https://picsum.photos/v2/list'} /> */ }
 export const ImageCarusel = ({ url }: { url: string }) => {
     const [imgData, setImgData] = useState([]);
     console.log(" imgData:", imgData)

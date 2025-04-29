@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { ImageCarusel } from "./components/ImageCarusel/ImageCarusel";
+import TshirtDesign from "./components/TShirtDesign/TshirtDesign";
 
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <>
-      <ImageCarusel url={'https://picsum.photos/v2/list'} />
+      <TshirtDesign />
     </>
   );
 };
