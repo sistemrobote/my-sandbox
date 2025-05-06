@@ -1,5 +1,23 @@
 
-//* OOP - Abstraction
+//*  OOP - Encapsulation:
+/**
+ * class Vallet {
+  #balance = 0;
+
+  getBalance = function () {
+    return this.#balance
+  }
+  addFunds(val) {
+    this.#balance += val;
+  }
+}
+const myVallet = new Vallet()
+console.log(myVallet.getBalance())
+myVallet.addFunds(40);
+console.log(myVallet.getBalance())
+ */
+
+//* OOP - Abstraction:
 /**
  class SomeClass {
   set(x, y) {
@@ -16,6 +34,20 @@ someClass.set(2, 4);
 console.log(someClass.getValues())
  */
 
+//*  OOP - Polymorphism:
+/**
+ * function makeSpeak(object) {
+  object.speak()
+}
+
+class Animal {
+  speak() {
+    console.log('Speak!');
+  }
+}
+makeSpeak(new Animal());
+*/
+
 //* CLOSURES 
 /**
  function closure(a) {
@@ -27,7 +59,7 @@ console.log(someClass.getValues())
  saySomethingA("B");
  */
 
-//* FACTORY PATTERN
+//* FACTORY PATTERN:
 /**
  * class Alien {
   constructor(name, noize) {
@@ -46,7 +78,7 @@ alien1.sayName();
 alien2.sayName();
  */
 
-//* ABSTRACT FACTORY PATTERN
+//* ABSTRACT FACTORY PATTERN:
 /**
  * class Car {
   constructor() { }
@@ -83,7 +115,7 @@ truck.makeNoize()
 car.makeNoize()
 */
 
-//* Builder pattern
+//* Builder pattern:
 /**
 const bug = {
   name: 'bug',
@@ -95,25 +127,3 @@ const addFlyAbility = (obj) => {
 addFlyAbility(bug);
 bug.fly();
  */
-
-
-//*  OOP - Encapsulation
-/**
- * class Vallet {
-  #balance = 0;
-
-  getBalance = function () {
-    return this.#balance
-  }
-  addFunds = function (val) {
-    this.#balance += val;
-  }
-}
-const myVallet = new Vallet()
-console.log(myVallet.getBalance())
-myVallet.addFunds(40);
-console.log(myVallet.getBalance())
- */
-
-
-Object.freeze(instance)
