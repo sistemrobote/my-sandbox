@@ -1,6 +1,6 @@
 // import { useEffect, useState } from "react";
 import "./App.css";
-import TshirtDesign from "./components/TShirtDesign/TshirtDesign";
+import { Login } from "./components/StravaConnect/Login";
 
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <div>
-      <TshirtDesign />
+      <Login />
     </div>
   );
 };
