@@ -34,8 +34,7 @@ async function fetchAndParse() {
         });
 
         const finalUrl = result.join('');
-        console.log('✅ Decoded URL:', finalUrl);
-        console.log('👉 Opening URL will give you the flag.');
+        console.log('Decoded URL:', finalUrl);
 
     } catch (err) {
         console.error('err.message');
